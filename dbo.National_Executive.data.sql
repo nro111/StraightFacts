@@ -1,0 +1,3 @@
+﻿INSERT INTO [dbo].[National_Executive] ([NE_ID], [NE_FirstName], [NE_LastName], [NE_Picture], [NE_Position], [NE_Party], [NE_Bio], [NE_Years_Of_Service], [NE_Terms], [NE_Branch]) 
+SELECT 1, 'Barack', 'Obama', BulkColumn , 'President', 'Democrat', 'This is a test bio', 8, 2, 'Executive'
+FROM Openrowset( Bulk 'C:\Users\Nicholas\Documents\Vote\images\album\Executive_Branch\Barack_Obama.jpg', Single_Blob) as img

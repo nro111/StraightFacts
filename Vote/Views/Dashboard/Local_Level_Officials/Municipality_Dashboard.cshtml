@@ -1,0 +1,77 @@
+﻿@model Vote.Models.DashboardViewModelHolder
+@{    
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<div class="st_overlay"></div> 
+
+<div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
+   
+     <!-- Carousel indicators -->
+    <ol class="carousel-indicators">
+        @for (int i = 0; i < Model.national_Elected_Officials.Count(); i++)
+        {
+            if (i.Equals(0))
+            {
+                <li data-target="#myCarousel" data-slide-to=@i class="active"></li>
+            }
+            else
+            {
+                <li data-target="#myCarousel" data-slide-to=@i></li>
+            }
+        }        
+    </ol>
+
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+        <!-- Utilize a foreach loop here because you dont need to access the iterator for incremental
+        calculation. Build the div class = "item", "class ="fill" and the class="carousel-caption"
+        inside the foreach loop. -->
+        @foreach (var electedOfficial in Model.local_Elected_Officials)
+        {
+            var base64 = Convert.ToBase64String(electedOfficial.Picture);
+            string imgSrc = String.Format("data:image/jpeg;base64,{0}", base64);
+            
+            if (electedOfficial.ElectedOfficialID.Equals(1) && electedOfficial.Branch.Equals("Municipality "))
+            {
+                <div class="item active">                          
+                    <img class="fill" src="@imgSrc" />                             
+                    <div class="carousel-caption">           
+                        <div class="text-background"></div>
+                        <h1>@electedOfficial.Position.ToString() @electedOfficial.FirstName.ToString() @electedOfficial.LastName.ToString()</h1>
+                        <h3>Party:</h3> @electedOfficial.Party.ToString()                        
+                        <h3>Terms Served In Office In Current Position:</h3> @electedOfficial.Terms                        
+                        <h3>Years Served In Office In Current Position:</h3> @electedOfficial.YearsOfService                        
+                        <h3>General Description Of @electedOfficial.FirstName @electedOfficial.LastName:</h3> @electedOfficial.Bio                        
+                    </div>
+                </div>
+            }
+            else if (!electedOfficial.ElectedOfficialID.Equals(1) && electedOfficial.Branch.Equals("Municipality "))
+            {
+                <div class="item">                    
+                    <img class="fill" src="@imgSrc" />                   
+                    <div class="carousel-caption">
+                        <div class="text-background"></div>
+                        <h1>@electedOfficial.Position.ToString() @electedOfficial.FirstName.ToString() @electedOfficial.LastName.ToString()</h1>
+                        <h3>Party:</h3> @electedOfficial.Party.ToString()
+                        <h3>Terms Served In Office In Current Position:</h3> @electedOfficial.Terms
+                        <h3>Years Served In Office In Current Position:</h3> @electedOfficial.YearsOfService
+                        <h3>General Description Of @electedOfficial.FirstName @electedOfficial.LastName:</h3> @electedOfficial.Bio
+                    </div>
+                </div>
+            }
+
+        }
+    </div>
+
+    <!-- Carousel nav -->
+
+    <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+
+    <a class="carousel-control right" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+
+</div>

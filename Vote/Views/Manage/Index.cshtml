@@ -1,0 +1,86 @@
+﻿@model Vote.Models.IndexViewModel
+@{
+    ViewBag.Title = "Manage";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+<p class="text-success">@ViewBag.StatusMessage</p>
+<div>
+    <h4>Change your account settings</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>State</dt>
+        <dd>
+            [
+            @if (Model.HasState)
+            {
+                @Html.ActionLink("Change your State", "ChangeState")
+            }
+            else
+            {
+                @Html.ActionLink("Create", "SetState")
+            }
+            ]
+        </dd>
+        <dt>City</dt>
+        <dd>
+            [
+            @if (Model.HasCity)
+            {
+                @Html.ActionLink("Change your City", "ChangeCity")
+            }
+            else
+            {
+                @Html.ActionLink("Create", "SetCity")
+            }
+            ]
+        </dd>
+        <dt>Zip</dt>
+        <dd>
+            [
+            @if (Model.HasZip)
+            {
+                @Html.ActionLink("Change your Zip", "ChangeZip")
+            }
+            else
+            {
+                @Html.ActionLink("Create", "SetZip")
+            }
+            ]
+        </dd>
+        <dt>Address</dt>
+        <dd>
+            [
+            @if (Model.HasAddress)
+            {
+                @Html.ActionLink("Change your Address", "ChangeAddress")
+            }
+            else
+            {
+                @Html.ActionLink("Create", "SetAddress")
+            }
+            ]
+        </dd>
+        <dt>Password:</dt>
+        <dd>
+            [
+            @if (Model.HasPassword)
+            {
+                @Html.ActionLink("Change your password", "ChangePassword")
+            }
+            else
+            {
+                @Html.ActionLink("Create", "SetPassword")
+            }
+            ]
+        </dd>
+        <dt>External Logins:</dt>
+        <dd>
+            @Model.Logins.Count [
+            @Html.ActionLink("Manage", "ManageLogins") ]
+        </dd>
+        
+        
+    </dl>
+</div>

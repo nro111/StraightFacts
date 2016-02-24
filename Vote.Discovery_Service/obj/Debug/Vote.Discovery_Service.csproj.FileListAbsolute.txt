@@ -1,0 +1,7 @@
+C:\Users\Nicholas\Documents\Vote\Vote.Discovery_Service\bin\Debug\Vote.Discovery_Service.dll
+C:\Users\Nicholas\Documents\Vote\Vote.Discovery_Service\bin\Debug\Vote.Discovery_Service.pdb
+C:\Users\Nicholas\Documents\Vote\Vote.Discovery_Service\bin\Debug\Vote.Repository.dll
+C:\Users\Nicholas\Documents\Vote\Vote.Discovery_Service\bin\Debug\Vote.Repository.pdb
+C:\Users\Nicholas\Documents\Vote\Vote.Discovery_Service\obj\Debug\Vote.Discovery_Service.csprojResolveAssemblyReference.cache
+C:\Users\Nicholas\Documents\Vote\Vote.Discovery_Service\obj\Debug\Vote.Discovery_Service.dll
+C:\Users\Nicholas\Documents\Vote\Vote.Discovery_Service\obj\Debug\Vote.Discovery_Service.pdb
