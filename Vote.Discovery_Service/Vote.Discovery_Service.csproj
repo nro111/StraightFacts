@@ -49,7 +49,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Vote.DAL\Vote.Repository.csproj">
+    <ProjectReference Include="..\Vote.Repository\Vote.Repository.csproj">
       <Project>{c2aa202a-d2a6-4694-a001-98817c5fa940}</Project>
       <Name>Vote.Repository</Name>
     </ProjectReference>
