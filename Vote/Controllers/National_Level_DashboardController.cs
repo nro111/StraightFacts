@@ -8,8 +8,9 @@ using Vote.Models;
 
 namespace Vote.Controllers
 {
-    public class National_Level_OfficialsController : Controller
+    public class National_Level_DashboardController : Controller
     {
+       
         // GET: National_Level_Dashboard       
         public ActionResult Executive_Dashboard()
         {

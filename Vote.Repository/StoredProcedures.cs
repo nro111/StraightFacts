@@ -13,6 +13,7 @@ namespace Vote.Repository
         [SqlProcedure]
         public static void insert_Into_Authentication_Table(string username, string password, string securityQuestion, string securityAnswer)
         {
+            //added command.ExecuteNonQuery(); and conn.Close(); to try and register credentials
             SqlConnection dbConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["Straight_Facts_DB_ConnectionString"].ConnectionString);
             using (dbConnection)
             {
@@ -24,6 +25,8 @@ namespace Vote.Repository
                     insertCredentialsIntoDB.Parameters.Add("@password", SqlDbType.NVarChar, 50).Value = password;
                     insertCredentialsIntoDB.Parameters.Add("@securityQuestion", SqlDbType.NVarChar).Value = securityQuestion;
                     insertCredentialsIntoDB.Parameters.Add("@securityAnswer", SqlDbType.NVarChar).Value = securityAnswer;
+                    insertCredentialsIntoDB.ExecuteNonQuery();
+                    dbConnection.Close();
                 }
             }
         }
@@ -61,6 +64,7 @@ namespace Vote.Repository
                         electedOfficial.Add(sdr["NE_Branch"]);
                         loadNationalOfficials.Add(electedOfficial); 
                     }
+                    dbConnection.Close();
                 }                
             }
             return loadNationalOfficials;
@@ -92,6 +96,7 @@ namespace Vote.Repository
                         electedOfficial.Add(sdr["NHOR_Terms"]);
                         loadNationalHouseOfReps.Add(electedOfficial);
                     }
+                    dbConnection.Close();
                 }
             }
             return loadNationalHouseOfReps;
@@ -124,6 +129,7 @@ namespace Vote.Repository
                         electedOfficial.Add(sdr["NS_Branch"]);
                         loadNationalSenateOfficials.Add(electedOfficial);
                     }
+                    dbConnection.Close();
                 }
             }
             return loadNationalSenateOfficials;
@@ -155,6 +161,7 @@ namespace Vote.Repository
                         electedOfficial.Add(sdr["NJ_Branch"]);
                         loadNationalJudicialOfficials.Add(electedOfficial);
                     }
+                    dbConnection.Close();
                 }
             }
             return loadNationalJudicialOfficials;
@@ -199,6 +206,7 @@ namespace Vote.Repository
                         electedOfficial.Add(sdr["SE_Branch"]);
                         loadStateExecutivesOfficials.Add(electedOfficial);
                     }
+                    dbConnection.Close();
                 }
             }
             return loadStateExecutivesOfficials;
@@ -231,6 +239,7 @@ namespace Vote.Repository
                         electedOfficial.Add(sdr["SHOR_Branch"]);
                         loadStateHouseOfRepresentativeOfficials.Add(electedOfficial);
                     }
+                    dbConnection.Close();
                 }
             }
             return loadStateHouseOfRepresentativeOfficials;
@@ -263,6 +272,7 @@ namespace Vote.Repository
                         electedOfficial.Add(sdr["SSEN_Branch"]);
                         loadStateOfficials.Add(electedOfficial);
                     }
+                    dbConnection.Close();
                 }
             }
             return loadStateOfficials;
@@ -294,6 +304,7 @@ namespace Vote.Repository
                         electedOfficial.Add(sdr["SJ_Branch"]);
                         loadStateOfficials.Add(electedOfficial);
                     }
+                    dbConnection.Close();
                 }
             }
             return loadStateOfficials;

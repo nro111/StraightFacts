@@ -112,7 +112,7 @@ namespace Vote.Controllers
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     discovery_service.add_New_User_To_DB(user.Email, model.Password, model.SecurityQuestion, model.SecurityAnswer); 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Dashboard");
                 }
                 AddErrors(result);
             }

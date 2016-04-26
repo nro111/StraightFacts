@@ -249,9 +249,9 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_DashboardLayout.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
-    <Content Include="Views\Dashboard\National_Level_Officials\Executive_Dashboard.cshtml" />
-    <Content Include="Views\Dashboard\National_Level_Officials\Judicial_Dashboard.cshtml" />
-    <Content Include="Views\Dashboard\National_Level_Officials\Legislative_Dashboard.cshtml" />
+    <Content Include="Views\Dashboard\National_Level_Dashboard\Executive_Dashboard.cshtml" />
+    <Content Include="Views\Dashboard\National_Level_Dashboard\Judicial_Dashboard.cshtml" />
+    <Content Include="Views\Dashboard\National_Level_Dashboard\Legislative_Dashboard.cshtml" />
     <Content Include="Views\Dashboard\State_Level_Officials\Executive_Dashboard.cshtml" />
     <Content Include="Views\Dashboard\State_Level_Officials\Judicial_Dashboard.cshtml" />
     <Content Include="Views\Dashboard\State_Level_Officials\Legislative_Dashboard.cshtml" />
